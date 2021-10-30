@@ -17,6 +17,7 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// aca esta la conexion con la base de datos y expres
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
