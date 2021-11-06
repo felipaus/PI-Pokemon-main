@@ -11,5 +11,4 @@ const router = Router();
 router.use("/type", typeRutes);
 router.use("/pokemon", pokemonRutes); // esto me genera /api/pokemon/*  (traigo las rotuterdel archivo pokemon.js)
 
-
 module.exports = router;

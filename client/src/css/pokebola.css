@@ -1,0 +1,21 @@
+.pokebola{
+    width: 400px;
+    margin: auto;
+    margin-top:10%;
+   
+}
+
+.pokebola :hover{
+    width: 400px;
+    margin: auto;
+    margin-top:10%;
+   
+}
+.static {
+    position:static;
+    /* background: white; */
+  }
+  
+  /* .static:hover {
+    opacity:0;
+  } */

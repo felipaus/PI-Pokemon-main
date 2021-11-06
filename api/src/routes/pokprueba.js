@@ -28,7 +28,9 @@ router.get("/", async (req, res, next) => {
         velocidad: pok.data.stats[3].base_stat,
         altura: pok.data.height,
         peso: pok.data.weight,
-        img: pok.data.sprites.front_default,
+        img: pok.data.sprites.other.dream_world.front_default,
+        type1: pok.data.types[0].type.name,
+        type2: pok.data.types
       };
       arr.push(obj);
     } else {
@@ -38,6 +40,7 @@ router.get("/", async (req, res, next) => {
         let length = resApi.data.results.length;
         for (let i = 0; i < length; i++) {
           let pok = await axios.get(resApi.data.results[i].url);
+          
           let obj = {
             id: pok.data.id,
             name: pok.data.name,
@@ -46,7 +49,9 @@ router.get("/", async (req, res, next) => {
             velocidad: pok.data.stats[3].base_stat,
             altura: pok.data.height,
             peso: pok.data.weight,
-            img: pok.data.sprites.front_default,
+            img: pok.data.sprites.other.dream_world.front_default,
+            type1: pok.data.types[0].type.name,
+            type2: pok.data.types
           };
           arr.push(obj);
         }
@@ -56,46 +61,65 @@ router.get("/", async (req, res, next) => {
         include: Type,
       });
     }
-
     //aca puedo ordenarlos
     //conecto
-
     allPokemon = [...arr, ...pokemonPromisDb];
     res.status(200).send(allPokemon);
   } catch (error) {
-    return res.status(400).json({ menssage: "No se econtro el pokemon" });
+    let pok={
+      name:"No existe este Pokemon",
+      img:"https://p4.wallpaperbetter.com/wallpaper/496/306/379/pokemon-dark-pikachu-sad-lonely-realistic-drawn-stylized-1280x800-anime-pokemon-hd-art-wallpaper-preview.jpg",
+      id:"0",
+    }
+    res.status(400).send(pok);;
   }
 });
 
 router.get("/:id", async (req, res, next) => {
   try {
     const id = req.params.id;
-    let pok;
+    let poke;
     if (typeof id === "string" && id.length > 8) {
       //es mio
-      pok = await Pokemon.findByPk(id);
+      poke = await Pokemon.findByPk(id);
     } else {
       //es de la api
-      let resApi = await axios.get("https://pokeapi.co/api/v2/pokemon/" + id);
-      pok = resApi.data;
+      let pok = await axios.get("https://pokeapi.co/api/v2/pokemon/" + id);
+      let obj = {
+        id: pok.data.id,
+        name: pok.data.name,
+        vida: pok.data.stats[0].base_stat,
+        fuerza: pok.data.stats[1].base_stat,
+        velocidad: pok.data.stats[3].base_stat,
+        altura: pok.data.height,
+        peso: pok.data.weight,
+        img:  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/"+id+".gif",
+        type1: pok.data.types[0].type.name,
+        type2: pok.data.types
+      };
+
+      poke = obj;
     }
-    res.status(200).send(pok);
+    res.status(200).send(poke);
   } catch (error) {
     next(error);
+
   }
 });
 
 router.post("/", async (req, res, next) => {
   try {
-    const { name, vida, fuerza, velocidad, altura, peso, img } = req.body;
+    const { name, img, vida, fuerza, velocidad, altura, peso, type1 } =
+      req.body;
     const newPokemon = await Pokemon.create({
       name,
+      img,
       vida,
       fuerza,
       velocidad,
       altura,
       peso,
-      img,
+      type1,
     });
     res.send(newPokemon);
   } catch (error) {

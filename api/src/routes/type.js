@@ -4,7 +4,7 @@ const { Type } = require("../db");
 
 const router = Router();
 
-router.get("/",async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     typePromes = await Type.findAll({});
     let resApi = await axios.get("https://pokeapi.co/api/v2/type");
@@ -13,7 +13,7 @@ router.get("/",async (req, res, next) => {
     for (let i = 0; i < length; i++) {
       let typ = await axios.get(resApi.data.results[i].url);
       let obj = {
-        id: typ.data.id,
+        id: i + 1,
         name: typ.data.name,
       };
       arr.push(obj);
@@ -28,7 +28,7 @@ router.get("/",async (req, res, next) => {
 router.post("/", async (req, res, next) => {
   try {
     const { name } = req.body;
-    const newType = await Type.create({      
+    const newType = await Type.create({
       name,
     });
     res.send(newType);
@@ -42,7 +42,6 @@ router.post("/:pokemonId/:tipoId", async (req, res, next) => {});
 router.put("/", (req, res, next) => {
   res.send("soy un put");
 });
-
 
 router.delete("/", (req, res, next) => {
   res.send("soy un put");

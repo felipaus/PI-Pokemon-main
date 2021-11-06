@@ -10,8 +10,9 @@ export default function Order(){
     }
 
     return <select className="select" onChange={onSelecet}>
-    <option value="ascendente">Ascendente</option>
-    <option value="descendente">Descendente</option>
+    
+    <option value="ascendente">A-Z</option>
+    <option value="descendente">Z-A</option>
     </select>
 
 }

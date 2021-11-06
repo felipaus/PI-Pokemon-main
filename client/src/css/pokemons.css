@@ -1,32 +1,135 @@
-.card{
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+      background-color:aliceblue ;
+  }
+
+.Formulario{
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
     margin: auto;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.8);
-    padding-bottom: 20px;
-    transition: all 600ms ease;    
-    transform: rotateX(20deg) scale(0.9);
-    box-shadow: 0px 20px 50px -10px #000;
+    margin-top:1%;
+    border-radius: 4px;
+    font-family: 'calibri';
+}
+ .Formulario h1{
+     color: aliceblue;
+     font-size: 22px;
+     margin-bottom: 20px;
+ }
+ .Formulario input {
+   
+     width: 100%;
+     background: #24303c;
+     padding: 10px;
+     border-radius: 4px;
+     margin-bottom: 16px;
+     border: 1px solid #1f53c5;
+     font-family: 'calibri';
+     font-size: 18px;
+     color: white;
+ }
+
+ .Formulario select{
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+ }
+
+
+ .Formulario label{
+    color: aliceblue;
+     height:  40px;
+     text-align: center;
+     font-size: 18px;
+ }
+
+ .Formulario .divboton{
+     width: 100%;
+     background: #1f53c5;
+     border: none;
+     padding: 12px;
+     color: white;
+     margin: 16px 0;
+     font-size: 16px;
+ }
+
+ .divboton :active{
+    background:white;  
 }
 
-.card:hover{
-    cursor: pointer;
-    transform: rotateX(0deg) scale(1) translateY(10px);
-    
+.card{
+    width: 100%;
+  padding-top: 110px;
+	background: url("https://github.com/ZeChrales/PogoAssets/blob/master/static_assets/png/Parkscene_Background.png?raw=true") center top, url("https://github.com/ZeChrales/PogoAssets/blob/master/static_assets/png/SkyDay.png?raw=true") center top / cover;
+	text-align: center;
+	user-select: none;
+    position: relative;
+    max-width: 300px;
+    border-radius: 8px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid black;
 }
+
+.card :before{
+    content: '';
+    background: radial-gradient(black 33%,transparent 33%);
+    background-size: 3px 3px;
+    border-radius:  4px;
+    height: auto;
+    width: auto;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: -1;
+}
+.imgCont{
+    /* background: radial-gradient(rgb(0, 0, 0) 65%,transparent 33%); */
+    position: center;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 50%;
+}
+
+.card div{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 5px;
+    font-size: 18px;
+}
+.card h3{
+    color: var(--color);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px dashed black;
+}
+
 
 
 .Lista {   
-   
     margin: auto;
     width: 80%;
     background-color: rgb(158, 146, 146, .5); 
     box-shadow: 0px 20px 50px -10px #000;
-
 display: flex;
-
 flex-wrap: wrap;
 -webkit-justify-content: center;
-
 }
    

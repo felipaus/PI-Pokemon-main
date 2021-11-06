@@ -5,6 +5,13 @@ import SearchBar from "./component/SearchBar";
 import PokemonsDetalle from "./component/pokeDetall";
 import Inicio from "./component/inicio";
 import Order from "./component/order";
+import  AddPokemon  from "./component/addPokemon";
+import FilterType from "./component/filterType";
+import Paginado from "./component/paginado";
+import FilterCreador from "./component/creador";
+import FilterFuerza from "./component/filterFuerza";
+import Nav from "./component/Nav";
+
 
 function App() {
   return (
@@ -12,13 +19,27 @@ function App() {
       <Route exact path="/">
         <Inicio />
       </Route>
-      <Switch>
+      <Switch>      
+        <Route exact path="/add"> 
+          <Nav path="/" />              
+          <AddPokemon className="add"/>        
+        </Route>         
         <Route exact path="/pokemon">
-          <SearchBar />
-          <Order/>
+          <Nav path="/" />   
+          <SearchBar className="Buscar" />        
+          <input type="checkbox" calss="cheak" className="chek" id="cheak"/>
+          <label className="menu" for="cheak">|||</label>
+          <div className="Control"> 
+            <FilterType />          
+            <FilterCreador />
+            <FilterFuerza />
+            <Order />
+          </div>
+          <Paginado/>
           <Pokemon />
         </Route>
         <Route exact path="/:id">
+          <Nav path="/" />
           <PokemonsDetalle />
         </Route>
       </Switch>

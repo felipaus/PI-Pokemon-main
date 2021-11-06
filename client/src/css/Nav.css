@@ -1,0 +1,28 @@
+.Nav{
+    background-color: #eee;
+	border-radius: 20px;
+	box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+	margin: 10px;    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    color: #fff;
+	}
+
+.Agregar :hover{
+    background-color: #000000;
+    border-radius: 100%;
+    transition: 2s ;
+} 
+
+.Inicio :hover{    
+    background-color: #000000;
+    border-radius: 50%;
+    transition: 2s ;
+}
+
+.Inicio img{
+    height: 10%;
+    width: 10%;
+}

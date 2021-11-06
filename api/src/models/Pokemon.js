@@ -16,7 +16,6 @@ module.exports = (sequelize) => {
     },
     vida: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     fuerza: {
       type: DataTypes.INTEGER,
@@ -34,5 +33,12 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       unique: true, //el valor tiene que ser unico
     },
+    type1:{
+      type: DataTypes.STRING
+    },
+    type2:{
+      type: DataTypes.ARRAY(DataTypes.JSON),
+      defaultValue: []
+    }
   });
 };
