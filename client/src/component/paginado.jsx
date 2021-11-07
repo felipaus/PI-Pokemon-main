@@ -1,3 +1,4 @@
+import "../css/Paginado.css"
 import { useDispatch } from "react-redux"
 import { paginado } from "../store/actions"
 
@@ -15,8 +16,8 @@ export default function Paginado(){
     // </select>
     
     return <div>
-        <button  onClick={onSelecet} value="Anterior">Anterior</button>
-        <button   onClick={onSelecet} value="Siguiente">Siguiente</button>
+        <button className="pag" onClick={onSelecet} value="Anterior">←</button>
+        <button  className="pag" onClick={onSelecet} value="Siguiente">→</button>
 
     </div>
 

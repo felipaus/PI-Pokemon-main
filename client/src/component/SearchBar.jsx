@@ -1,3 +1,4 @@
+import "../css/seachBar.css"
 import { useState } from "react";
 import { searchPokemon } from "../store/actions";
 import { useDispatch } from "react-redux"
@@ -17,9 +18,9 @@ export default function SearchBar() {
   }
 
   return (
-    <div>
-        <input type="text" onChange={onInputChange} value={search} />
-        <button  onClick={onSubmit}  value="Buscar" >Buscar</button>     
+    <div className="search">
+        <input className="searchTerm" type="text" onChange={onInputChange} value={search} />
+        <button  className="searchButton" onClick={onSubmit}  value="Buscar" >Buscar</button>     
     </div>
   );
 }

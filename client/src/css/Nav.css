@@ -12,7 +12,8 @@
 
 .Agregar :hover{
     background-color: #000000;
-    border-radius: 100%;
+    color: #eee;
+    border-radius: 20%;
     transition: 2s ;
 } 
 
@@ -26,3 +27,17 @@
     height: 10%;
     width: 10%;
 }
+.Agregar{
+        text-decoration: none;
+        height:auto;
+        width:auto;
+        border-radius:8px;
+        padding:10px;
+}
+
+      .Agregar h1{
+          color: #000000;
+        text-decoration: none;
+       
+    
+      }
