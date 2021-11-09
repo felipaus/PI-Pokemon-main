@@ -26,8 +26,11 @@ export default  function Pokemon(){
         {pokemon.map((pokemo)=>{
             
             return <Pokemons name={pokemo.name} img={pokemo.img} id={pokemo.id} type={pokemo.type1} type2={mostrar(pokemo.type2)} />
-        })} </>:
-        <div>Cargando</div>
+        })} </>:<>
+        <img src="https://i.pinimg.com/originals/66/89/dc/6689dc331be27e66349ce9a4d15ddff3.gif"></img>
+        
+        
+        <h1>Cargando...</h1></>
         }
         </div>
 }

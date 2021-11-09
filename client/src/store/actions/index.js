@@ -70,12 +70,7 @@ export function filtrar(typo){
   }
 }
 
-export function paginado(pag){
-  return{
-    type:PAGINADO,
-    payload:pag
-  }
-}
+
 
 export function creador(pok){
   return{
@@ -88,5 +83,11 @@ export function fuerza(pok){
   return{
     type:FUERZA,
     payload:pok
+  }
+}
+export function paginado(pag){
+  return{
+    type:PAGINADO,
+    payload:pag
   }
 }

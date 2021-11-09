@@ -54,29 +54,34 @@ export default  function PokemonsDetalle(){
     return <div className="card" >
         {
         pokemon?        
-        <>   
+        <>  
+        <div>
         <h1 >{pokemon.name}</h1>
-        <img  className="imgCont" src={pokemon.img} alt={pokemon.img}/>
+        <h3 style={{borderColor:colortipe(pokemon.type1), color: colortipe(pokemon.type1) }}>{pokemon.type1}</h3>
+        <h3 style={{borderColor:colortipe(mostrar(pokemon.type2)), color: colortipe(mostrar(pokemon.type2)) }}>{mostrar(pokemon.type2)}</h3> 
         <h2>#{pokemon.id
         .toString()
-        .padStart(3, '0')}</h2>      
-        <h3 style={{borderColor:colortipe(pokemon.type1), color: colortipe(pokemon.type1) }}>{pokemon.type1}</h3> 
-        <h3 style={{borderColor:colortipe(mostrar(pokemon.type2)), color: colortipe(mostrar(pokemon.type2)) }}>{mostrar(pokemon.type2)}</h3> 
-        <div>HP
-        <progress max="200" value ={pokemon.vida }>vida</progress>
+        .padStart(3, '0')}</h2>   
+        <img  className="imgCont" src={pokemon.img} alt={pokemon.img}/>
+        </div> 
+        <div className="stats">
+            <h1>Stats</h1>
+       <div  className="texst">HP        
+        <progress  className="post" max="100" value ={pokemon.vida }>vida</progress>
         </div>
-        <div>Attack
-        <progress max="200" value ={pokemon.fuerza }>fuerz</progress>
+        <div className="texst">Attack
+        <progress  className="post" max="100" value ={pokemon.fuerza }>fuerz</progress>
         </div>
-        <div>speed
-        <progress max="200" value ={pokemon.velocidad }></progress>
+        <div className="texst">speed
+        <progress  className="post" max="100" value ={pokemon.velocidad }></progress>
         </div>
-        <div>height
-        <progress max="100" value ={pokemon.altura }></progress>
+        <div className="texst">height
+        <progress className="post"  max="100" value ={pokemon.altura }></progress>
         </div>
-        <div>weight
-        <progress max="3000" value ={pokemon.peso }></progress>
-        </div>        
+        <div className="texst">weight
+        <progress  className="post" max="100" value ={pokemon.peso }></progress>
+        </div>
+        </div>     
         </>:
         <div>Loading</div>
         }       

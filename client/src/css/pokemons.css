@@ -7,9 +7,14 @@
       background-color:aliceblue ;
   }
 
+  .Formulario h2{
+    color: rgb(255, 0, 0);
+  }
+
 .Formulario{
     width: 400px;
-    background: #24303c;
+    background-color: rgb(158, 146, 146, .5); 
+box-shadow: 0px 20px 50px -10px #000;
     padding: 30px;
     margin: auto;
     margin-top:1%;
@@ -17,65 +22,77 @@
     font-family: 'calibri';
 }
  .Formulario h1{
-     color: aliceblue;
+     color: rgb(0, 0, 0);
      font-size: 22px;
      margin-bottom: 20px;
  }
  .Formulario input {
    
      width: 100%;
-     background: #24303c;
+     background-color: rgb(158, 146, 146, .5); 
+box-shadow: 0px 20px 50px -10px #000;
      padding: 10px;
      border-radius: 4px;
      margin-bottom: 16px;
-     border: 1px solid #1f53c5;
+     border: 1px solid #000000;
      font-family: 'calibri';
      font-size: 18px;
-     color: white;
+     color: rgb(0, 0, 0);
  }
 
  .Formulario select{
     width: 100%;
-    background: #24303c;
+    background-color: rgb(158, 146, 146, .5); 
+box-shadow: 0px 20px 50px -10px #000;
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 16px;
-    border: 1px solid #1f53c5;
+    border: 1px solid #000000;
     font-family: 'calibri';
     font-size: 18px;
-    color: white;
+    color: rgb(0, 0, 0);
  }
 
 
  .Formulario label{
-    color: aliceblue;
+    color: rgb(0, 0, 0);
      height:  40px;
      text-align: center;
-     font-size: 18px;
+     font-size: 20px;
  }
 
  .Formulario .divboton{
      width: 100%;
-     background: #1f53c5;
-     border: none;
+     background-color: rgb(158, 146, 146, .5); 
+box-shadow: 0px 20px 50px -10px #000;
+     /* border: none; */
      padding: 12px;
-     color: white;
+     color: rgb(0, 0, 0);
      margin: 16px 0;
      font-size: 16px;
+     cursor: pointer;
+     transition: 1s;
  }
 
- .divboton :active{
-    background:white;  
+ .Formulario .divboton :active{
+    background-color: rgba(75, 65, 65, 0.5); 
+}
+.Formulario .divboton:hover{
+    background-color: rgba(75, 65, 65, 0.5);
+  color: rgb(0, 0, 0);
 }
 
 .card{
-    width: 100%;
-  padding-top: 110px;
+    display: flex;
+    justify-content: center;    
+     width: 80%;
+    
+    padding-top: 110px;
 	background: url("https://github.com/ZeChrales/PogoAssets/blob/master/static_assets/png/Parkscene_Background.png?raw=true") center top, url("https://github.com/ZeChrales/PogoAssets/blob/master/static_assets/png/SkyDay.png?raw=true") center top / cover;
 	text-align: center;
 	user-select: none;
     position: relative;
-    max-width: 300px;
+    max-width: auto;
     border-radius: 8px;
     color: #000;
     text-align: center;
@@ -103,18 +120,19 @@
     width: 100px;
     height: 100px;
     margin: 10px auto;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .card div{
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
+    display:block;
+    justify-content:space-between;
+    align-content:center;
     padding: 5px;
     font-size: 18px;
 }
 .card h3{
-    color: var(--color);
+    display:inline-block;
+    width: auto;
     padding: 5px;
     margin: 5px;
     border-radius: 4px;
@@ -125,11 +143,27 @@
 
 .Lista {   
     margin: auto;
-    width: 80%;
+    width: 75%;
     background-color: rgb(158, 146, 146, .5); 
     box-shadow: 0px 20px 50px -10px #000;
-display: flex;
-flex-wrap: wrap;
--webkit-justify-content: center;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
 }
    
+.post { 
+    padding: 2px;
+    width:1;   
+    border: 3px solid #000000;
+  
+  }
+  
+  .stats{     
+    background-color: rgb(158, 146, 146, .5); 
+    box-shadow: 0px 20px 50px -10px #000;
+  }
+
+.texst{
+   right: 1px;
+}

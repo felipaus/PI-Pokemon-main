@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
     },
     img: {
       type: DataTypes.STRING,
-      unique: true, //el valor tiene que ser unico
+      unique: true,
     },
     type1:{
       type: DataTypes.STRING

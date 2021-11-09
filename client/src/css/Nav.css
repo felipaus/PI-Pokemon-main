@@ -10,34 +10,48 @@
     color: #fff;
 	}
 
-.Agregar :hover{
-    background-color: #000000;
-    color: #eee;
-    border-radius: 20%;
-    transition: 2s ;
-} 
+
 
 .Inicio :hover{    
     background-color: #000000;
-    border-radius: 50%;
+    border-radius: 45%;
     transition: 2s ;
 }
 
 .Inicio img{
-    height: 10%;
-    width: 10%;
-}
-.Agregar{
-        text-decoration: none;
-        height:auto;
-        width:auto;
-        border-radius:8px;
-        padding:10px;
+    margin-left: 100px;
+    height:120px;
+    width: 120px;
 }
 
-      .Agregar h1{
-          color: #000000;
-        text-decoration: none;
-       
+.Agregar :hover{
+    background-color: #f30000;
+    color: white;
+    border-radius:20%;
+    height:120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ;
+
     
-      }
+} 
+.Agregar{
+    margin-right:  100px;
+    height:120px;
+    width: 120px;
+    border-radius:20%;
+    text-decoration: none;
+    background-color:transparent; 
+    color: black; 
+    border: 2px solid #f30000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Agregar h1{
+    color: #000000;
+    text-decoration: none;
+}

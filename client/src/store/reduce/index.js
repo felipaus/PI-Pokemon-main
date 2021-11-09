@@ -74,29 +74,6 @@ export default function reducer(state = initialState, action) {
         ...state,
         pokemon: a,
       };
-    case PAGINADO:
-      let paginado = [...state.filterPokemon];
-      let b;
-      if (action.payload === "Siguiente") {
-        if (paginado.length <= state.cont) {
-          state.cont = paginado.length + 8;
-        } else {
-          state.cont = state.cont + 12;
-        }
-      } else {
-        if (state.cont > 21) {
-          state.cont = state.cont - 12;
-        } else {
-          state.cont = 12;
-        }
-      }
-      // console.log(state.cont)
-      b = paginado.slice(state.cont - 12, state.cont);
-
-      return {
-        ...state,
-        pokemon: b,
-      };
     case CREADOR:
       let exis = [...state.creado];
       let aux;
@@ -129,10 +106,36 @@ export default function reducer(state = initialState, action) {
           return a.fuerza - b.fuerza;
         });
       }
+      let p = Mayor.slice(0, 9);
+      state.cont=9
       return {
         ...state,
-        pokemon: Mayor,
+        pokemon: p,
+        filterPokemon: Mayor,
       };
+      case PAGINADO:
+        let paginado = [...state.filterPokemon];
+        let b;
+        if (action.payload === "Siguiente") {
+          if (paginado.length <= state.cont) {
+            state.cont = paginado.length + 8;
+          } else {
+            state.cont = state.cont + 12;
+          }
+        } else {
+          if (state.cont > 21) {
+            state.cont = state.cont - 12;
+          } else {
+            state.cont = 12;
+          }
+        }
+        // console.log(state.cont)
+        b = paginado.slice(state.cont - 12, state.cont);
+  
+        return {
+          ...state,
+          pokemon: b,
+        };
     default:
       return state;
   }
