@@ -9,7 +9,7 @@ const pokemon = {
   name: "Pikachu",
 };
 
-xdescribe("Pokemon routes", () => {
+describe("Pokemon routes", () => {
   before(() =>
     conn.authenticate().catch((err) => {
       console.error("Unable to connect to the database:", err);
@@ -20,18 +20,19 @@ xdescribe("Pokemon routes", () => {
   );
   describe("get /pokemon", () => {
     it("get de todos los pokemons", async () =>
-      await agent.get("/pokemon/")
-      .expect(200)
-      .expect("Content-Type", /json/)
-      .expect(function (res) {
-        expect(res.body[0].name).to.equal("bulbasaur");})
-      ).timeout(15000);
+      await agent
+        .get("/api/pokemon/")
+        .expect(200)
+        .expect("Content-Type", /json/)
+        .expect(function (res) {
+          expect(res.body[0].name).to.equal("bulbasaur");
+        })).timeout(15000);
   });
 
   describe("get /pokemon/id", () => {
     it("tengo que obtener un 200 y un name: bulbasaur", async () =>
       await agent
-        .get("/pokemon/1")
+        .get("/api/pokemon/1")
         .expect(200)
         .expect("Content-Type", /json/)
         .expect(function (res) {
@@ -42,7 +43,7 @@ xdescribe("Pokemon routes", () => {
   describe("get /pokemon/name=bulbasaur", () => {
     it("tengo que obtener un 200 y un name: bulbasaur", async () =>
       await agent
-        .get("/pokemon?name=bulbasaur")
+        .get("/api/pokemon?name=bulbasaur")
         .expect(200)
         .expect("Content-Type", /json/)
         .expect(function (res) {
@@ -53,12 +54,19 @@ xdescribe("Pokemon routes", () => {
   describe("post /pokemon/", () => {
     it("tegno que obetner un pokemon de nombre felipe", async () =>
       await agent
-        .post("/pokemon/")
-        .send({ name:"felipe"})
+        .post("/api/pokemon/")
+        .send({ name: "felipe" })
         .expect(201)
         .expect("Content-Type", /json/)
         .expect(function (res) {
           expect(res.body.name).to.equal("felipe");
         })).timeout(15000);
   });
+
+  // describe("get /pokemon/id", () => {
+  //   it("tengo que obtener un 'Request failed with status code 404' ", async () =>
+  //     await agent
+  //       .get("/api/pokemon/1000")
+  //       .expect("Request failed with status code 404")).timeout(15000);
+  // });
 });

@@ -26,7 +26,7 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use("/", routes); // esto me genera /api/*
+server.use("/api", routes); // esto me genera /api/*
 
 // Error catching endware.
 server.use((err, req, res, next) => {

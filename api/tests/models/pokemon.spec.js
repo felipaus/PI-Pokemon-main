@@ -18,7 +18,25 @@ describe("Pokemon model", () => {
       it("should work when its a valid name", () => {
         Pokemon.create({ name: "Pikachu" });
       });
-
     });
   });
 });
+
+describe("Pokemon Model", function () {
+  beforeEach(function () {
+    return Pokemon.sync({ force: true });
+  });
+  describe("Validations", function () {
+    it("no se puede crear sin un nombre", function (done) {
+      Pokemon.create({
+        vida: 1,        
+      })
+        .then(() => done("No debería haberse creado"))
+        .catch(() => done());
+    });
+  });
+});
+
+
+
+

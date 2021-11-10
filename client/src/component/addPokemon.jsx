@@ -14,7 +14,9 @@ export default function AddPokemon(){
     },[])
 
   
-    const [error,setError]=useState({})
+    const [error,setError]=useState({
+        name:"tiene que ingresar un nombre",
+    })
     const [pokemon,setPokemon]=useState({
         name:"",
         img:"",
@@ -28,6 +30,20 @@ export default function AddPokemon(){
    
 
     function validate (x,y){
+        if([y]=="name"){
+            if(/\S+/.test(x)){
+                setError({
+                    ...error,
+                    [y]:" "
+                })
+
+            }else{
+                setError({
+                    ...error,
+                    [y]: "tiene que ingresar un nombre"
+                })                    
+            }            
+        }
         
         if([y]!="name"){
         if(/^\d+(\.\d{1,2})?$/.test(x)){
@@ -72,7 +88,7 @@ export default function AddPokemon(){
             })  
         ).catch(
             setError({
-                name:"Tiene que ingreasr un nombre",
+                name:error.name,
                 img:"",
                 vida:error.vida,
                 fuerza:error.fuerza,
@@ -110,7 +126,9 @@ export default function AddPokemon(){
         {
         (type.length!=0)?
         <>
+        <option value="vacio">Tipos</option>
         {
+            
         type.map((type)=>{
             return    <option value={type.name}>{type.name}</option>
         })}</>:<option >cargando...</option>

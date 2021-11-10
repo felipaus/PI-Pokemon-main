@@ -15,13 +15,13 @@ describe("<Nav/>", () => {
   it("Deberia renderizar Dos <NavLink />", () => {
     expect(wrapper.find(NavLink)).toHaveLength(2);
   });
-  it('El primer NavLink debe tener el texto " " y cambiar la ruta hacia "/".', () => {
+  it('El primer NavLink cambiar la ruta hacia "/".', () => {
     //el orden donde declaran los Links es importante
     expect(wrapper.find(NavLink).at(0).prop("to")).toEqual("/");
     // Tiene que ser literal! ojo con los espacios.
     expect(wrapper.find(NavLink).at(0).text()).toEqual("");
       });
-  it('El segundo NavLink debe tener el texto " " y cambiar la ruta hacia "/add"', () => {
+  it('El segundo NavLink debe tener el texto " Agregar Pokemon" y cambiar la ruta hacia "/add"', () => {
     expect(wrapper.find(NavLink).at(1).prop("to")).toEqual("/add");
     // Tiene que ser literal! ojo con los espacios.
     expect(wrapper.find(NavLink).at(1).text()).toEqual("Agregar Pokemon");

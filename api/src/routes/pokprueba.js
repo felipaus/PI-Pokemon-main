@@ -102,6 +102,7 @@ router.get("/:id", async (req, res, next) => {
     }
     res.status(200).send(poke);
   } catch (error) {
+    res.status(404)
     next(error);
 
   }
@@ -123,31 +124,24 @@ router.post("/", async (req, res, next) => {
     });
     res.status(201).send(newPokemon);
   } catch (error) {
+    
     next(error);
   }
 });
 
-router.post("/:pokemonId/:tipoId", async (req, res, next) => {
-  //esto es para cuadno agrege la tabla TIPO
-  try {
-    const { pokemonId, tipoId } = req.params;
-    const pokemon = await Pokemon.findByPk(pokemonId);
-    await pokemon.addType(tipoId); //son funciones son los mixin de sequelize(esto lo vimos en la calse de sequelize),, se crean automaticamente pone el add'nombreDeTuTabla'
-    res.send(200);
-  } catch (error) {
-    next(error);
-  }
-});
-
-// router.get("/", (req, res, next) => {
-//   return Pokemon.findAll()
-//     .then((pokemon) => {
-//       res.send(pokemon);
-//     })
-//     .catch(() => {
-//       next(error);
-//     });
+// router.post("/:pokemonId/:tipoId", async (req, res, next) => {
+//   //esto es para cuadno agrege la tabla TIPO
+//   try {
+//     const { pokemonId, tipoId } = req.params;
+//     const pokemon = await Pokemon.findByPk(pokemonId);
+//     await pokemon.addType(tipoId); //son funciones son los mixin de sequelize(esto lo vimos en la calse de sequelize),, se crean automaticamente pone el add'nombreDeTuTabla'
+//     res.send(200);
+//   } catch (error) {
+//     next(error);
+//   }
 // });
+
+
 
 router.get('/', (req, res) => {
   res.send(200)
