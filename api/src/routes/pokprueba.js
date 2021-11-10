@@ -121,7 +121,7 @@ router.post("/", async (req, res, next) => {
       peso,
       type1,
     });
-    res.send(newPokemon);
+    res.status(201).send(newPokemon);
   } catch (error) {
     next(error);
   }
@@ -149,12 +149,19 @@ router.post("/:pokemonId/:tipoId", async (req, res, next) => {
 //     });
 // });
 
-router.put("/", (req, res, next) => {
-  res.send("soy un put");
+router.get('/', (req, res) => {
+  res.send(200)
 });
-module.exports = router;
+
+
+router.put("/", (req, res, next) => {
+  res.send(200)
+});
+
 
 router.delete("/", (req, res, next) => {
-  res.send("soy un put");
+  res.send({
+    message: 'delete',
+  })
 });
 module.exports = router;
