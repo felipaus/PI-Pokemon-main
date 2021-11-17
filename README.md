@@ -6,6 +6,7 @@
 
 <p align="left">
   <img height="150" src="./pokemon.png" />
+    <video src="https://drive.google.com/file/d/1Id6EvzXzysXM2NzMgnMa7zdzROZqaeUK/view" width="640" height="480"></video>
 </p>
 
 ## Objetivos del Proyecto
