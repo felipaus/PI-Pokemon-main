@@ -16,7 +16,7 @@
 
 [video](https://www.youtube.com/watch?v=Z-iF3WFMzms&ab_channel=NPRMusic)
 
-[![Watch the video](https://i.imgur.com/Z-iF3WFMzms.png)](https://www.youtube.com/watch?v=Z-iF3WFMzms&ab_channel=NPRMusic)
+[![Alt text](https://img.youtube.com/vi/Z-iF3WFMzms/0.jpg)](https://www.youtube.com/watch?v=Z-iF3WFMzms)
 
 
 
