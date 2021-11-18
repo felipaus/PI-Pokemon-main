@@ -14,6 +14,10 @@
 - Aprender y practicar el workflow de GIT.
 - Usar y practicar testing.
 
+[video](https://www.youtube.com/watch?v=Z-iF3WFMzms&ab_channel=NPRMusic)
+
+
+
 ## Comenzando
 
  1. Forkear el repositorio para tener una copia del mismo en sus cuentas
